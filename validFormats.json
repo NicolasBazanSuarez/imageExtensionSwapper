@@ -1,5 +1,8 @@
 {
-    "formats" : [
+    "imageFormats" : [
         "jpg", "png", "jpeg", "webp"
+    ],
+    "videoFormats" : [
+        "mp4", "avi", "mpeg", "mkv", "wmv"
     ]
 }
