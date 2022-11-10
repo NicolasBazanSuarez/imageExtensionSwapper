@@ -22,5 +22,5 @@ def getNewFilePath(outputFolder, folderName, fileNameConverted):
     return outputFolder+"/{}/{}".format(folderName, fileNameConverted)
 
 def checkFolderExist(fileData: FileData):
-    if (not os.path.isdir(fileData.outputFolder+"/"+fileData.folderName)):
-        os.mkdir(fileData.outputFolder+"/"+fileData.folderName)
+    if (not os.path.isdir(fileData.__outputFolder+"/"+fileData.__folderName)):
+        os.mkdir(fileData.__outputFolder+"/"+fileData.__folderName)

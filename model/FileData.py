@@ -1,22 +1,24 @@
-from paprika import *
 import os
+
+from paprika import *
+
 
 @data
 class FileData:
-    filename: str
-    folderName: str
-    path: str
-    outputFolder: str
+    __filename: str
+    __folderName: str
+    __path: str
+    __outputFolder: str
     
     def __init__(self, filename, folder, outputFolder):
-        self.folderName = self.createFolderName(folder)
-        self.filename = filename
-        self.outputFolder = outputFolder
-        self.path = self.createPath(filename)
+        self.__folderName = self.createFolderName(folder)
+        self.__filename = filename
+        self.__outputFolder = outputFolder
+        self.__path = self.createPath(filename)
         
     def __init__(self, folder, outputFolder):
-        self.folderName = self.createFolderName(folder)
-        self.outputFolder = outputFolder
+        self.__folderName = self.createFolderName(folder)
+        self.__outputFolder = outputFolder
         
     def createPath(folder, filename):
         os.path.join(folder, filename)
