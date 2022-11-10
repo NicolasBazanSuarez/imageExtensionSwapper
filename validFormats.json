@@ -4,5 +4,8 @@
     ],
     "videoFormats" : [
         "mp4", "avi", "mpeg", "mkv", "wmv"
+    ],
+    "audioFormats" : [
+        "mp3", "wav"
     ]
 }
