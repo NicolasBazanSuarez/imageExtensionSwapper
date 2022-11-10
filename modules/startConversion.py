@@ -13,21 +13,21 @@ def start(data, mapValidator, outputFolder):
             fileData = FileData(folder, outputFolder)
             output.checkFolderExist(fileData)
             for filename in os.listdir(folder):
-                fileData.__filename = filename
-                fileData.__outputFolder = outputFolder
+                fileData.filename = filename
+                fileData.outputFolder = outputFolder
                 path = os.path.join(folder, filename)
                 # checking if it is a file
                 if os.path.isfile(path):
-                    print(fileData.__filename)
-                    if fileData.__filename.split(".")[-1] in mapValidator["validFormats"]:
+                    print(fileData.filename)
+                    if fileData.filename.split(".")[-1] in mapValidator["validFormats"]:
                         imageConverter.convert(mapValidator["outputFormat"], fileData)
-                    elif fileData.__filename.split(".")[-1] in mapValidator["validFormats"]:
+                    elif fileData.filename.split(".")[-1] in mapValidator["validFormats"]:
                         videoConverter.convert(mapValidator["outputFormat"], fileData)
-                    elif fileData.__filename.split(".")[-1] in mapValidator["validFormats"]:
+                    elif fileData.filename.split(".")[-1] in mapValidator["validFormats"]:
                         audioConverter.convert(mapValidator["outputFormat"], fileData)
                     else:
                         print("Cannot convert {} format into a {}".format(fileData, mapValidator["outputFormat"]))
-            output.endFolderConverter(fileData.__folderName)
+            output.endFolderConverter(fileData.folderName)
         else:
             print("Invalid output folder {}".format(folder))
         
